@@ -1,0 +1,18 @@
+<mat-card>
+  <div *ngIf="funcionario">
+    <h1 mat-dialog-title>Deseja confimar a exclusão?</h1>
+    <div mat-dialog-content>
+      <h2 style="font-style: bold">Funcionário:</h2>
+      <p>{{ funcionario.nome }} {{ funcionario.sobrenome }}</p>
+      <h2 style="font-style: bold">Departamento:</h2>
+      <p>{{ funcionario.departamento }}</p>
+    </div>
+
+    <div>
+      <button mat-raised-button (click)="VoltarClose()">Não</button>
+      <button (click)="DeleteFuncionario()" mat-raised-button color="warn">
+        Sim
+      </button>
+    </div>
+  </div>
+</mat-card>

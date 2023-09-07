@@ -11,6 +11,30 @@ import { EditarComponent } from './pages/editar/editar.component';
 import { DetalhesComponent } from './pages/detalhes/detalhes.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+//Angular Material
+import {MatButtonModule} from '@angular/material/button'; 
+
+//Card
+import {MatCardModule} from '@angular/material/card'; 
+
+//Input
+import {MatInputModule} from '@angular/material/input'; 
+
+//select
+import {MatSelectModule} from '@angular/material/select'; 
+
+//table
+import {MatTableModule} from '@angular/material/table'; 
+
+//Icon
+import {MatIconModule} from '@angular/material/icon';
+import {MatDividerModule} from '@angular/material/divider';
+
+//Modal
+import {MatDialogModule} from '@angular/material/dialog';
+import { ExcluirComponent } from './components/excluir/excluir.component'; 
 
 @NgModule({
   declarations: [
@@ -19,14 +43,24 @@ import { ReactiveFormsModule } from '@angular/forms';
     CadastroComponent,
     FuncionarioFormComponent,
     EditarComponent,
-    DetalhesComponent
+    DetalhesComponent,
+    ExcluirComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCardModule,
+    MatInputModule,
+    MatSelectModule,
+    MatTableModule,
+    MatIconModule,
+    MatDividerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,20 +13,27 @@ export class DetalhesComponent implements OnInit{
   constructor(private funcionarioService: FuncionarioService, private router: Router, private route: ActivatedRoute){}
 
   funcionario?: Funcionario;
+  id!:number;
 
   ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
     
-    this.funcionarioService.GetFuncionarioById(id).subscribe((data) => {
+    this.funcionarioService.GetFuncionarioById(this.id).subscribe((data) => {
 
       const dadosInternos = data.dados;
 
-      // dadosInternos.map((item) => {
-      //   item.dataDeCadastro = new Date().toLocaleDateString('pt-BR');
+      dadosInternos.dataDeCriacao = new Date(dadosInternos.dataDeCriacao).toLocaleDateString('pt-BR');
+      dadosInternos.dataDeAlteracao = new Date(dadosInternos.dataDeAlteracao).toLocaleDateString('pt-BR');
 
-      // });
+      dadosInternos
 
       this.funcionario = data.dados;
     })
+  }
+
+  InativaFuncionario(){
+    this.funcionarioService.InativaFuncionario(this.id).subscribe((data)=> {
+      this.router.navigate(['']);
+    });
   }
 }

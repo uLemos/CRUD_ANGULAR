@@ -1,12 +1,15 @@
 .mat-mdc-button-base{
     margin: 8px 8px 0px 0px;
 }
+
 mat-card{
-    width: 50%;
-    height: 80%;
+    width: 80%;
+    height: 350px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    overflow: 0; 
+    padding: 3rem;
+    margin: 3rem;
+    overflow: hidden;
 }

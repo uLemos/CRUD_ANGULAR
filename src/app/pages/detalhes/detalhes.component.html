@@ -1,41 +1,95 @@
-<div>
-  <h1>Datelhes do Funcionário</h1>
-</div>
+<mat-card>
+  <div>
+    <h1>Datelhes do Funcionário</h1>
+  </div>
 
-<div *ngIf="funcionario">
-  <form action="">
-    <div class="input-box">
-      <label for="">Nome</label>
-      <input type="text" value="{{ funcionario.nome }}" />
-    </div>
-    <div class="input-box">
-      <label for="">Sobrenome</label>
-      <input type="text" value="{{ funcionario.sobrenome }}" />
-    </div>
-    <div class="input-box">
-      <label for="">Departamento</label>
-      <input type="text" value="{{ funcionario.departamento }}" />
-    </div>
-    <div class="input-box">
-      <label for="">Situação</label>
-      <input type="text" value="{{ funcionario.ativo }}" />
-    </div>
-    <div class="input-box">
-      <label for="">Turno</label>
-      <input type="text" value="{{ funcionario.turno }}" />
-    </div>
-    <div class="input-box">
-      <label for="">Data De Criação</label>
-      <input type="text" value="{{ funcionario.dataDeCriacao }}" />
-    </div>
-    <div class="input-box">
-      <label for="">Data de Alteração</label>
-      <input type="text" value="{{ funcionario.dataDeAlteracao }}" />
-    </div>
+  <div *ngIf="funcionario">
+    <form action="">
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label for="">Nome</mat-label>
+          <input matInput type="text" disabled value="{{ funcionario.nome }}" />
+        </mat-form-field>
+      </div>
 
-    <div class="btn-box">
-      <button>Inativar</button>
-      <button routerLink="">Voltar</button>
-    </div>
-  </form>
-</div>
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label for="">Sobrenome</mat-label>
+          <input
+            matInput
+            type="text"
+            disabled
+            value="{{ funcionario.sobrenome }}"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label for="">Departamento</mat-label>
+          <input
+            matInput
+            type="text"
+            disabled
+            value="{{ funcionario.departamento }}"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label for="">Situação</mat-label>
+          <input
+            matInput
+            type="text"
+            disabled
+            value="{{ funcionario.ativo == true ? 'ativo' : 'Inativo' }}"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label for="">Turno</mat-label>
+          <input
+            matInput
+            type="text"
+            disabled
+            value="{{ funcionario.turno }}"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label for="">Data De Criação</mat-label>
+          <input
+            matInput
+            type="text"
+            disabled
+            value="{{ funcionario.dataDeCriacao }}"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="input-box">
+        <mat-form-field>
+          <mat-label for="">Data de Alteração</mat-label>
+          <input
+            matInput
+            type="text"
+            disabled
+            value="{{ funcionario.dataDeAlteracao }}"
+          />
+        </mat-form-field>
+      </div>
+
+      <div class="btn-box">
+        <button mat-raised-button color="warn" (click)="InativaFuncionario()">
+          Inativar
+        </button>
+        <button mat-raised-button routerLink="">Voltar</button>
+      </div>
+    </form>
+  </div>
+</mat-card>
